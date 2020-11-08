@@ -44,5 +44,10 @@ int main()
 	for( auto& e : edges ){ g.add_edge( e.substr( 0, 1 ), e.substr( 1, 1 ) ); }
 	// .substr( a_partir_de_dónde, cuántos_queremos_leer )
 
+   g.print();
+
 	g.bfs( "A" );
+
+   std::cout << "\nRuta:\n";
+   g.bfs_printBack( "G" );
 }

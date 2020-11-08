@@ -90,3 +90,32 @@ void Graph::bfs( std::string start )
 {
 
 }
+
+void Graph::bfs_printBack( std::string start )
+{
+   if( get_vertex( start )->get_predecesor() == "Nil" ){
+      std::cout << "El punto de destino es igual al punto de salida. Nada que hacer.\n";
+      return;
+   }
+
+   auto v = get_vertex( start );
+   // devuelve un apuntador al vértice
+
+   auto name = v->get_name();
+   auto distance = v->get_distance();
+   auto predecesor = v->get_predecesor();
+
+   while( 1 )
+   {
+      std::cout << name << ": " << distance << ", " << predecesor << std::endl;
+
+      if( predecesor == "Nil" ) break;
+      else v = get_vertex( predecesor );
+
+      name = v->get_name();
+      distance = v->get_distance();
+      predecesor = v->get_predecesor();
+   }
+   std::cout << "\n";
+}
+

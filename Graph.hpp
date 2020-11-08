@@ -59,5 +59,7 @@ public:
 
 	void print();
 
-	void bfs( std::string name );
+	void bfs( std::string start );
+
+   void bfs_printBack( std::string finish );
 };
